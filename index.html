@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гринь Ксения — специалист по телу и душе</title>
+  <meta name="description" content="Многопрофильный специалист по телу и душе. Остеопатия, мануальная терапия, психология, массаж, энергетические практики.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --forest:    #2C5728;
+      --sage:      #4A7A3B;
+      --moss:      #6FA058;
+      --mist:      #A8CC90;
+      --mint:      #CCE8B8;
+      --pale:      #E4F2D8;
+      --cream:     #F3EFE4;
+      --parchment: #EAE3D0;
+      --sand:      #D8CDB0;
+      --warmgold:  #B89040;
+      --brown:     #6A4E32;
+      --text-dark: #283020;
+      --text-body: #47583C;
+      --text-mute: #6B7D60;
+      --white:     #FDFBF5;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text-body);
+      line-height: 1.75;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(243,239,228,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--mist);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw; height: 62px;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 400; letter-spacing: .06em;
+      color: var(--forest); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-mute);
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .48rem 1.3rem;
+      background: var(--forest); color: var(--white);
+      border-radius: 100px; text-decoration: none;
+      font-size: .78rem; font-weight: 600; letter-spacing: .1em;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--sage); transform: translateY(-1px); }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 92vh;
+      display: flex; align-items: center;
+      padding: 7rem 6vw 5rem;
+      background: var(--cream); overflow: hidden;
+    }
+    .hero-bg-plant {
+      position: absolute; right: -1%; top: 0; bottom: 0;
+      width: min(52%, 560px);
+      display: flex; align-items: center;
+      pointer-events: none; z-index: 0;
+      opacity: .13;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 620px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .24em; text-transform: uppercase;
+      color: var(--moss); margin-bottom: 1.2rem;
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.8rem, 8vw, 7.2rem);
+      font-weight: 300; line-height: 1.0;
+      color: var(--forest); letter-spacing: -.01em;
+      margin-bottom: .6rem;
+    }
+    .hero-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+      font-style: italic; font-weight: 300;
+      color: var(--text-mute); margin-bottom: 2rem;
+    }
+    .hero-quote {
+      font-size: .98rem; color: var(--text-body);
+      line-height: 1.85; max-width: 480px;
+      border-left: 2.5px solid var(--mist);
+      padding-left: 1.1rem; margin-bottom: 2.2rem;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem; }
+    .tag {
+      padding: .28rem .9rem;
+      border: 1.5px solid var(--moss); border-radius: 100px;
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .06em; color: var(--sage);
+    }
+    .hero-actions { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; padding: .88rem 2.2rem;
+      background: var(--forest); color: var(--white);
+      border-radius: 100px; text-decoration: none;
+      font-size: .9rem; font-weight: 600; letter-spacing: .06em;
+      box-shadow: 0 6px 28px rgba(44,87,40,.25);
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .btn-primary:hover {
+      background: var(--sage);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(44,87,40,.3);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .88rem; color: var(--text-mute); text-decoration: none;
+      transition: color .2s;
+    }
+    .btn-ghost:hover { color: var(--forest); }
+
+    /* ── ABOUT ───────────────────────────────────────────── */
+    .about {
+      background: var(--parchment); padding: 7rem 6vw;
+      position: relative; overflow: hidden;
+    }
+    .about-inner {
+      display: grid; grid-template-columns: 5fr 7fr;
+      gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto;
+    }
+    .photo-frame {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--mint) 0%, var(--pale) 100%);
+      border-radius: 140px 140px 70px 70px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .photo-hint {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-style: italic;
+      color: var(--sage); text-align: center; padding: 2rem; opacity: .65;
+    }
+    .photo-leaf {
+      position: absolute; bottom: -10px; right: -10px;
+      width: 130px; opacity: .18;
+    }
+    .about-text blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+      font-weight: 300; font-style: italic;
+      color: var(--forest); line-height: 1.5;
+      padding-left: 1.6rem;
+      border-left: 3px solid var(--mist);
+      margin-bottom: 1.8rem;
+    }
+    .about-text p { font-size: .97rem; color: var(--text-body); line-height: 1.85; margin-bottom: 1rem; }
+    .about-text em { font-style: italic; color: var(--sage); }
+
+    /* ── SERVICES ────────────────────────────────────────── */
+    .services { background: var(--cream); padding: 7rem 6vw; }
+    .section-head { max-width: 1100px; margin: 0 auto 3.5rem; }
+    h2.section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 300; color: var(--forest);
+      line-height: 1.15; margin-bottom: 1rem;
+    }
+    .section-sub { font-size: .97rem; color: var(--text-mute); max-width: 560px; line-height: 1.8; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem; max-width: 1100px; margin: 0 auto;
+    }
+    .card {
+      background: var(--white); border-radius: 22px;
+      padding: 2.2rem 1.9rem;
+      border: 1.5px solid rgba(168,204,144,.35);
+      position: relative; overflow: hidden;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 60px rgba(44,87,40,.1);
+      border-color: var(--mist);
+    }
+    .card-icon { width: 44px; height: 44px; margin-bottom: 1.3rem; color: var(--sage); }
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 500;
+      color: var(--forest); margin-bottom: .55rem; line-height: 1.2;
+    }
+    .card p { font-size: .88rem; color: var(--text-mute); line-height: 1.75; }
+    .card-num {
+      position: absolute; bottom: -.6rem; right: 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.5rem; font-weight: 300;
+      color: var(--mint); opacity: .5; line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+
+    /* ── PROCESS ─────────────────────────────────────────── */
+    .process {
+      background: var(--forest); padding: 7rem 6vw;
+      position: relative; overflow: hidden;
+    }
+    .process-bg {
+      position: absolute; right: -60px; top: -60px;
+      width: 500px; opacity: .05; pointer-events: none;
+    }
+    .process .eyebrow { color: var(--mist); }
+    .process .section-title { color: var(--mint); margin-bottom: 1rem; }
+    .process .section-sub { color: rgba(255,255,255,.6); margin-bottom: 3.5rem; }
+    .steps {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2.5rem; max-width: 1100px;
+    }
+    .step {
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(168,204,144,.25);
+    }
+    .step-lbl {
+      font-size: .72rem; font-weight: 700; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--mist);
+      margin-bottom: .9rem;
+    }
+    .step h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.42rem; font-weight: 400;
+      color: var(--white); margin-bottom: .55rem;
+    }
+    .step p { font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.75; }
+
+    /* ── QUOTE BANNER ────────────────────────────────────── */
+    .quote-banner {
+      background: linear-gradient(135deg, var(--pale) 0%, var(--parchment) 100%);
+      padding: 7.5rem 6vw; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .quote-bg-leaf {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%,-50%);
+      width: 600px; opacity: .06; pointer-events: none;
+    }
+    .big-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 3.6rem);
+      font-weight: 300; font-style: italic;
+      color: var(--forest); max-width: 800px;
+      margin: 0 auto 2.8rem; line-height: 1.3;
+      position: relative; z-index: 1;
+    }
+    .quote-banner .btn-primary { position: relative; z-index: 1; font-size: 1rem; padding: 1rem 2.6rem; }
+    .tg-handle {
+      display: block; margin-top: 1.4rem;
+      font-size: .82rem; color: var(--text-mute);
+      position: relative; z-index: 1;
+    }
+
+    /* ── PRACTICES ───────────────────────────────────────── */
+    .practices { background: var(--parchment); padding: 6rem 6vw; }
+    .practices-inner { max-width: 1100px; margin: 0 auto; }
+    .pills {
+      display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 2.4rem;
+    }
+    .pill {
+      display: flex; align-items: center; gap: .75rem;
+      padding: 1rem 1.6rem;
+      background: var(--white); border-radius: 16px;
+      border: 1.5px solid rgba(168,204,144,.45);
+      font-size: .9rem; color: var(--text-body);
+      transition: border-color .2s, transform .2s;
+    }
+    .pill:hover { border-color: var(--moss); transform: translateY(-2px); }
+    .pill svg { color: var(--sage); flex-shrink: 0; }
+
+    /* ── WHY ─────────────────────────────────────────────── */
+    .why { background: var(--cream); padding: 7rem 6vw; }
+    .why-inner { max-width: 1100px; margin: 0 auto; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .why-card {
+      background: var(--white); border-radius: 18px; padding: 1.9rem;
+      border: 1.5px solid rgba(168,204,144,.3);
+      transition: transform .2s, border-color .2s;
+    }
+    .why-card:hover { transform: translateY(-3px); border-color: var(--mist); }
+    .why-icon { font-size: 1.4rem; margin-bottom: .8rem; }
+    .why-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.22rem; font-weight: 500;
+      color: var(--forest); margin-bottom: .45rem;
+    }
+    .why-card p { font-size: .86rem; color: var(--text-mute); line-height: 1.72; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--text-dark); color: rgba(255,255,255,.55);
+      padding: 3.5rem 6vw 2.5rem; text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem; font-weight: 300;
+      color: var(--white); letter-spacing: .04em; margin-bottom: .4rem;
+    }
+    .footer-role {
+      font-size: .75rem; font-weight: 600; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--mist); margin-bottom: 1.8rem;
+    }
+    footer a { color: var(--mist); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    footer a:hover { color: var(--mint); }
+    .footer-divider { width: 40px; height: 1px; background: rgba(168,204,144,.3); margin: 1.5rem auto; }
+    .footer-copy { font-size: .75rem; opacity: .35; }
+
+    /* ── ANIMATIONS ─────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .about-inner { grid-template-columns: 1fr; }
+      .photo-frame { max-width: 320px; margin: 0 auto; aspect-ratio: 1/1; border-radius: 100px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .hero-bg-plant { opacity: .06; }
+      section, .about, .services, .process, .quote-banner, .practices, .why { padding: 5rem 5vw; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ──────── NAV ──────── -->
+<nav>
+  <a class="nav-logo" href="#">Гринь Ксения</a>
+  <ul class="nav-links">
+    <li><a href="#about">Обо мне</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#process">Как это работает</a></li>
+    <li><a href="#contact">Записаться</a></li>
+  </ul>
+  <a class="nav-cta" href="https://t.me/Grin_Kseniia" target="_blank">Записаться</a>
+</nav>
+
+<!-- ──────── HERO ──────── -->
+<section class="hero">
+  <!-- botanical background illustration -->
+  <svg class="hero-bg-plant" viewBox="0 0 500 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M250 760 C250 760 248 560 252 390 C256 220 244 90 250 12" stroke="#2C5728" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- left leaves -->
+    <path d="M250 640 C195 622 148 588 126 548 C115 525 134 494 156 504 C182 516 222 562 250 598 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 640 L188 572" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <path d="M250 570 C193 554 147 518 127 476 C117 452 137 420 160 432 C188 446 226 494 250 530 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 570 L188 502" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <!-- right leaves -->
+    <path d="M250 620 C305 600 352 566 372 526 C382 502 363 470 341 480 C315 493 277 540 250 576 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 620 L312 552" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <path d="M250 546 C306 528 354 490 373 448 C383 424 362 390 339 402 C311 416 273 466 250 504 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 546 L312 476" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <!-- mid left -->
+    <path d="M250 448 C192 432 148 394 130 350 C121 326 142 293 167 305 C196 319 232 370 250 408 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 448 L190 380" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <!-- mid right -->
+    <path d="M250 412 C308 394 352 356 370 312 C379 288 360 254 336 266 C307 280 269 332 250 372 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 412 L310 342" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <!-- upper left -->
+    <path d="M250 296 C200 280 162 248 148 210 C140 188 156 160 176 170 C200 182 232 228 250 266 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 296 L198 228" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <!-- upper right -->
+    <path d="M250 268 C300 250 340 216 354 178 C362 156 346 128 325 138 C299 150 265 198 250 238 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M250 268 L302 198" stroke="#2C5728" stroke-width=".8" opacity=".4"/>
+    <!-- top leaves -->
+    <path d="M250 170 C226 152 208 126 207 100 C206 80 218 64 234 72 C250 81 252 116 250 148 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.2"/>
+    <path d="M250 148 C274 130 292 104 292 78 C293 58 280 42 264 50 C248 59 247 94 250 126 Z" fill="#4A7A3B" stroke="#2C5728" stroke-width="1.2"/>
+    <path d="M250 170 L248 110" stroke="#2C5728" stroke-width=".7" opacity=".4"/>
+    <!-- small decorative berries -->
+    <circle cx="165" cy="320" r="5" fill="#6FA058" opacity=".5"/>
+    <circle cx="158" cy="308" r="3.5" fill="#6FA058" opacity=".4"/>
+    <circle cx="335" cy="282" r="4.5" fill="#6FA058" opacity=".5"/>
+    <circle cx="143" cy="362" r="3" fill="#6FA058" opacity=".35"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="eyebrow">Специалист по телу и душе</div>
+    <h1 class="hero-name">Гринь<br>Ксения</h1>
+    <p class="hero-role">Многопрофильный специалист по здоровью</p>
+    <p class="hero-quote">
+      Основной закон моей жизни — свет и любовь.<br>
+      Помогаю осознать свет души, найти опору и увидеть то,<br>
+      что мешает быть <em style="font-style:italic;color:var(--sage)">сЧастливым</em> и здоровым прямо сейчас.
+    </p>
+    <div class="tag-row">
+      <span class="tag">Остеопатия</span>
+      <span class="tag">Мануальная терапия</span>
+      <span class="tag">Психология</span>
+      <span class="tag">Массаж</span>
+      <span class="tag">Энергетика</span>
+      <span class="tag">Аромамасла</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://t.me/Grin_Kseniia" target="_blank">Записаться на сеанс</a>
+      <a class="btn-ghost" href="#about">Узнать больше <span style="margin-top:1px">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ──────── ABOUT ──────── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-photo reveal">
+      <div class="photo-frame">
+        <p class="photo-hint">Ваше фото<br>здесь</p>
+        <!-- leaf decoration -->
+        <svg class="photo-leaf" viewBox="0 0 200 200" fill="none">
+          <path d="M20 180 C20 180 60 100 100 60 C140 20 180 20 180 20 C180 20 180 60 140 100 C100 140 20 180 20 180Z" fill="#4A7A3B"/>
+          <path d="M20 180 L180 20" stroke="#2C5728" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <div class="eyebrow reveal">Моя философия</div>
+      <h2 class="section-title reveal">Свет. Любовь.<br>Исцеление.</h2>
+      <blockquote class="reveal">
+        "Помогаю человеку осознать его свет души, даю опору увидеть то, что мешает быть сЧастливым и здоровым сейчас."
+      </blockquote>
+      <p class="reveal">
+        Работаю комплексно — через восстановление ресурса тела, психического, эмоционального и ментального здоровья. Каждый человек уникален, и на каждом сеансе я иду от него — от его тела, его истории, его состояния.
+      </p>
+      <p class="reveal" style="font-style:italic; color:var(--sage); margin-top:.8rem">
+        Мой главный принцип — отсутствие жёстких принципов.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ──────── SERVICES ──────── -->
+<section class="services" id="services">
+  <div class="section-head reveal">
+    <div class="eyebrow">Направления работы</div>
+    <h2 class="section-title">Комплексный подход<br>к телу и душе</h2>
+    <p class="section-sub">Сочетание всех подходов позволяет работать с разными системами тела и достичь наилучшего физического и психологического состояния.</p>
+  </div>
+
+  <div class="services-grid">
+    <!-- 1 -->
+    <div class="card reveal reveal-delay-1">
+      <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="24" cy="10" r="5"/>
+        <path d="M24 15 L24 30"/>
+        <path d="M14 20 L24 22 L34 20"/>
+        <path d="M17 30 L24 28 L31 30"/>
+        <path d="M17 30 L15 40"/>
+        <path d="M31 30 L33 40"/>
+      </svg>
+      <h3>Остеопатия</h3>
+      <p>Коррекция суставов, мышц и связок. Уменьшение болей, восстановление подвижности и баланса в теле.</p>
+      <span class="card-num">1</span>
+    </div>
+    <!-- 2 -->
+    <div class="card reveal reveal-delay-2">
+      <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M10 14 C10 14 14 10 18 12 L26 20 C28 22 26 26 24 25 L16 18"/>
+        <path d="M16 18 L22 24 C24 26 22 30 20 29 L12 22"/>
+        <path d="M20 30 C22 34 26 38 32 38 C38 38 42 34 42 28 C42 22 38 18 32 18"/>
+        <circle cx="32" cy="28" r="7"/>
+      </svg>
+      <h3>Мануальная и висцеральная терапия</h3>
+      <p>Улучшение работы внутренних органов и общей функциональности тела через мягкие мануальные техники.</p>
+      <span class="card-num">2</span>
+    </div>
+    <!-- 3 -->
+    <div class="card reveal reveal-delay-3">
+      <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="24" cy="20" r="10"/>
+        <path d="M20 17 Q24 21 28 17"/>
+        <path d="M21 23 Q24 26 27 23"/>
+        <path d="M24 30 L24 40"/>
+        <path d="M18 40 L30 40"/>
+        <path d="M10 44 L14 36 Q18 30 24 30 Q30 30 34 36 L38 44"/>
+      </svg>
+      <h3>Психология</h3>
+      <p>Работа с тревогами, депрессиями и другими психологическими состояниями. Путь к внутренней гармонии.</p>
+      <span class="card-num">3</span>
+    </div>
+    <!-- 4 -->
+    <div class="card reveal reveal-delay-1">
+      <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M10 20 C8 16 8 12 12 10 C16 8 18 10 18 14 L22 26"/>
+        <path d="M14 22 C12 18 12 14 16 12 C20 10 22 12 22 16 L26 28"/>
+        <path d="M22 26 L26 28 C30 30 36 28 38 24 C40 20 38 16 34 18 L30 20"/>
+        <path d="M20 34 Q24 38 28 34"/>
+      </svg>
+      <h3>Массаж</h3>
+      <p>Расслабление, снятие напряжения, восстановление уровня энергии через массаж и телесные техники.</p>
+      <span class="card-num">4</span>
+    </div>
+    <!-- 5 -->
+    <div class="card reveal reveal-delay-2">
+      <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="24" cy="24" r="6"/>
+        <path d="M24 6 L24 12"/>
+        <path d="M24 36 L24 42"/>
+        <path d="M6 24 L12 24"/>
+        <path d="M36 24 L42 24"/>
+        <path d="M11.03 11.03 L15.27 15.27"/>
+        <path d="M32.73 32.73 L36.97 36.97"/>
+        <path d="M36.97 11.03 L32.73 15.27"/>
+        <path d="M15.27 32.73 L11.03 36.97"/>
+        <circle cx="24" cy="24" r="13" stroke-dasharray="4 4" opacity=".4"/>
+      </svg>
+      <h3>Энергетическая гимнастика</h3>
+      <p>Ежедневные практики на базе биодинамики. Восстановление энергетического ресурса тела и духа.</p>
+      <span class="card-num">5</span>
+    </div>
+    <!-- 6 -->
+    <div class="card reveal reveal-delay-3">
+      <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M24 6 C18 6 12 12 12 20 C12 28 18 36 24 42 C30 36 36 28 36 20 C36 12 30 6 24 6Z"/>
+        <path d="M24 14 C20 14 18 18 18 22"/>
+        <circle cx="32" cy="38" r="4"/>
+        <circle cx="36" cy="33" r="2.5"/>
+        <circle cx="38" cy="38" r="2"/>
+      </svg>
+      <h3>Аромамасла и литотерапия</h3>
+      <p>Эфирные масла, аттары, абсолюты (Индия). Кристаллы и камни как природные инструменты исцеления.</p>
+      <span class="card-num">6</span>
+    </div>
+  </div>
+</section>
+
+<!-- ──────── PROCESS ──────── -->
+<section class="process" id="process">
+  <!-- background botanical -->
+  <svg class="process-bg" viewBox="0 0 400 400" fill="none">
+    <circle cx="200" cy="200" r="160" stroke="white" stroke-width="1" stroke-dasharray="8 8"/>
+    <circle cx="200" cy="200" r="100" stroke="white" stroke-width="1" stroke-dasharray="4 4"/>
+  </svg>
+
+  <div class="eyebrow">Как проходит работа</div>
+  <h2 class="section-title" style="color:var(--mint);margin-bottom:1rem">Путь к здоровью</h2>
+  <p class="section-sub">Каждый сеанс — живая встреча, где мы идём от вас: от вашего тела, вашей истории, вашего состояния прямо сейчас.</p>
+
+  <div class="steps">
+    <div class="step reveal reveal-delay-1">
+      <div class="step-lbl">Шаг первый</div>
+      <h3>Первичная встреча</h3>
+      <p>Диагностика и знакомство с вашим состоянием. Определяем, что мешает быть здоровым и счастливым прямо сейчас.</p>
+    </div>
+    <div class="step reveal reveal-delay-2">
+      <div class="step-lbl">Шаг второй</div>
+      <h3>Индивидуальный подбор методов</h3>
+      <p>Выбор инструментов под ваш запрос — остеопатия, терапия, психология, массаж, энергетика или их сочетание.</p>
+    </div>
+    <div class="step reveal reveal-delay-3">
+      <div class="step-lbl">Шаг третий</div>
+      <h3>Комплексное восстановление</h3>
+      <p>Работа через тело, психику, эмоции и ментальное здоровье. Восстановление ресурса по всем уровням сразу.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ──────── QUOTE BANNER ──────── -->
+<section class="quote-banner" id="contact">
+  <!-- big leaf watermark -->
+  <svg class="quote-bg-leaf" viewBox="0 0 600 600" fill="none">
+    <path d="M60 540 C60 540 160 280 300 180 C440 80 540 60 540 60 C540 60 520 160 400 280 C280 400 60 540 60 540Z" fill="#4A7A3B"/>
+    <path d="M60 540 L540 60" stroke="#2C5728" stroke-width="3"/>
+    <path d="M60 540 C200 400 400 250 540 60" stroke="#2C5728" stroke-width="1.5" opacity=".4"/>
+    <path d="M60 540 C220 420 420 270 540 60" stroke="#2C5728" stroke-width="1" opacity=".25"/>
+  </svg>
+
+  <p class="big-quote reveal">
+    «Я ваш проводник в здоровую жизнь — каждый день»
+  </p>
+  <a class="btn-primary reveal" href="https://t.me/Grin_Kseniia" target="_blank">
+    Написать в Telegram
+  </a>
+  <span class="tg-handle reveal">@Grin_Kseniia</span>
+</section>
+
+<!-- ──────── PRACTICES ──────── -->
+<section class="practices">
+  <div class="practices-inner">
+    <div class="eyebrow reveal">Дополнительно</div>
+    <h2 class="section-title reveal">Природные методы<br>исцеления</h2>
+    <div class="pills">
+      <div class="pill reveal reveal-delay-1">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        Энергетическая гимнастика (биодинамика) — ежедневно
+      </div>
+      <div class="pill reveal reveal-delay-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 2C7 2 3 7 3 12s4 10 9 10 9-4 9-10S17 2 12 2"/>
+          <path d="M12 8c-2.5 0-5 2.5-5 5"/>
+        </svg>
+        Аромамасла — эфирные, аттары, абсолюты (Индия)
+      </div>
+      <div class="pill reveal reveal-delay-3">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        Литотерапия — кристаллы и камни
+      </div>
+      <div class="pill reveal reveal-delay-1">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        Работа через свет и любовь
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────── WHY ──────── -->
+<section class="why">
+  <div class="why-inner">
+    <div class="eyebrow reveal">Почему обращаются</div>
+    <h2 class="section-title reveal">Что отличает<br>этот подход</h2>
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🌿</div>
+        <h4>Комплексный взгляд</h4>
+        <p>Работаю одновременно с физическим телом, психикой, эмоциями и ментальным здоровьем — не с симптомом, а с человеком целиком.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🌱</div>
+        <h4>Без шаблонов</h4>
+        <p>Каждая встреча строится от вашего конкретного состояния здесь и сейчас. Никаких протоколов, которые не подходят именно вам.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">🍃</div>
+        <h4>Натуральные методы</h4>
+        <p>Остеопатия, висцеральная терапия, аромамасла, кристаллы — инструменты, которые работают через природу тела.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">☀️</div>
+        <h4>Ежедневная практика</h4>
+        <p>Энергетическая гимнастика каждый день — для поддержания ресурса и развития чувствительности к собственному телу.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🌸</div>
+        <h4>Глубина работы</h4>
+        <p>Помогаю осознать не только симптом, но и то, что за ним стоит — через диалог, телесную работу и психологическую поддержку.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💛</div>
+        <h4>Свет и любовь — основа</h4>
+        <p>Исцеление происходит тогда, когда человек чувствует себя увиденным и принятым. Именно из этого места рождается настоящее здоровье.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────── FOOTER ──────── -->
+<footer>
+  <div class="footer-logo">Гринь Ксения</div>
+  <div class="footer-role">Специалист по телу и душе</div>
+  <a href="https://t.me/Grin_Kseniia" target="_blank">@Grin_Kseniia</a>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">Будьте здоровы ♥</p>
+</footer>
+
+<script>
+  // scroll reveal
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
